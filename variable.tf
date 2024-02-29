@@ -118,3 +118,17 @@ variable "ec2_key_pair_name" {
   description = "Name of ec2 key pair"
   type = string
 }
+
+# Route 53 Variables
+variable "domain_name" {
+  default = "2jeggz96.click"
+  description = "domain name"
+  type = string
+}
+
+
+variable "record_name" {
+  default = "www"
+  description = "sub domain name"
+  type = string
+}
