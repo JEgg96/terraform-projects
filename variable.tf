@@ -42,8 +42,37 @@ variable "private_data_subnet_az2_cidr" {
 }
 
 #Security groups variable
+
 variable "ssh_location" {
   default = "0.0.0.0/0"
   description = "IP address that can SSH into ec2 instances"
   type = string
+}
+
+#RDS Variables
+variable "Database_Snapshot_Identifier" {
+  default = "arn:aws:rds:us-east-1:374861848262:snapshot:fleetcart-final-snapshot"
+  description = "Database Snapshot ARN"
+  type = string
+}
+
+#Database Instance Class
+variable "Database_instance_class" {
+  default = "db.t2.micro"
+  description = "Database instance type"
+  type = string
+}
+
+#Database Instance Identifier
+variable "Database_instance_identifier" {
+  default = "dev-rds-db"
+  description = "Database instance identifier"
+  type = string
+}
+
+# Multi-AZ-Deployment
+variable "Multi-AZ-Deployment" {
+  default = "false"
+  description = "Create a stand-by instance"
+  type = bool
 }
